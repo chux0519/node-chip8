@@ -1,0 +1,15 @@
+{
+  "name": "node-chip8",
+  "version": "0.0.0",
+  "description": "chip8 node binding",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "node index.js"
+  },
+  "gypfile": true,
+  "dependencies": {
+    "bindings": "^1.3.1",
+    "node-addon-api": "^1.6.2"
+  }
+}
