@@ -1,3 +1,10 @@
-var addon = require('bindings')('hello')
+var chip = require('bindings')('node-chip8')
 
-console.log(addon.hello()) // 'world'
+let buffer = Buffer.alloc(6218)
+console.log(buffer[0])
+try {
+  chip.step(buffer, buffer.length)
+  console.log(buffer[0])
+} catch (e) {
+  console.error(e)
+}
