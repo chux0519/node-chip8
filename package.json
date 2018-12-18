@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "chip8 node binding",
   "main": "index.js",
-  "private": true,
   "scripts": {
     "test": "tap test.js --cov"
   },
