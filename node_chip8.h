@@ -30,12 +30,17 @@ const size_t SP_POS = SOUND_TIMER_POS + SOUND_TIMER_SIZE;
 // Total Size
 const size_t CHIP_BUFFER_SIZE = SP_POS + SP_SIZE;
 
-// Stateless
-void chip8_step(unsigned char *memory, unsigned char *registers,
-                unsigned short *opcode_ptr, unsigned short *ir_ptr,
-                unsigned short *pc_ptr, unsigned char *delay_timer_ptr,
-                unsigned char *sound_timer_ptr, unsigned short *stack,
-                unsigned short *sp_ptr, unsigned char *keyboard,
-                unsigned char *pixels);
+typedef void (*ChipHandler)(chip8_t *);
+void chip8_reset(chip8_t *chip);
+
+void proxy(uint8_t *chunk, ChipHandler);
+
+// Stateless functions
+void proxy_chip8_step(uint8_t *chunk);
+void proxy_chip8_reset(uint8_t *chunk);
+
+// Exports
+Napi::Value Step(const Napi::CallbackInfo &info);
+Napi::Value Reset(const Napi::CallbackInfo &info);
 
 #endif
