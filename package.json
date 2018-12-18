@@ -1,6 +1,6 @@
 {
   "name": "node-chip8",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "chip8 node binding",
   "main": "index.js",
   "private": true,

@@ -6,11 +6,11 @@
             "cflags_cc!": ["-fno-exceptions"],
             "sources": [
                 "node_chip8.cc",
-                "deps/chip8/src/chip8.c"
+                "deps/chip8/chip8.c"
             ],
             "include_dirs": [
                 "<!@(node -p \"require('node-addon-api').include\")",
-                "deps/chip8/src/"
+                "deps/chip8/"
             ],
             'defines': ['NAPI_DISABLE_CPP_EXCEPTIONS'],
         }
